@@ -1,0 +1,1 @@
+﻿package objects{	import starling.display.Sprite;	import starling.display.Image;	public class Bullet extends Sprite	{		public function Bullet()		{			var image:Image = new Image(Assets.mpAtlas.getTexture("bigbullet"));			pivotX = width * 0.5;			pivotY = height * 0.5;			addChild(image);		}	}}
