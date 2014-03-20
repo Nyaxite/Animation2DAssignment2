@@ -11,7 +11,7 @@
 
 		private var play:Level3;
 		public var enemies:Array;
-		private var numEnemies:int = 3;
+		private var numEnemies:int = 5;
 
 		public function Level3EnemyManager(play:Level3)
 		{
@@ -63,7 +63,7 @@
 			// move enemy plane back to starting position off screen
 			enemy.y =  -  enemy.height;
 			enemy.x = Math.random() * Starling.current.nativeStage.stageWidth;
-			enemy.speed = Math.random() * 4 + 4;
+			enemy.speed = Math.random() * 5 + 6;
 		}
 
 		public function destroy():void

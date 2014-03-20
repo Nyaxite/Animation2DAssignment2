@@ -48,6 +48,9 @@
 		public var level:Level;
 		private var channel:SoundChannel;
 		public var fire:Boolean = false;
+		
+		private const DIFFICULTY_THRESHOLD_SCORE:int = 100;
+		private var difficultyScore = DIFFICULTY_THRESHOLD_SCORE;
 
 		public function Level3(game:Game, previousScore:Score, previousLives:Lives)
 		{
@@ -146,7 +149,6 @@
 			cloudManager.update();
 			enemyManager.update();
 			collisionManager.update();
-
 		}
 
 		public function destroy():void
