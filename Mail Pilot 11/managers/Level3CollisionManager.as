@@ -1,8 +1,13 @@
-﻿package managers
+﻿/*
+	Original code by: Tom Tsiliopoulos
+	Edited by: Michael Burnie
+	Description: Took the level2CollisionManager and modified it for the third level.
+*/
+package managers
 {
 	import states.Level3;
 
-	import objects.Cloud;
+	import objects.Meteor;
 	import objects.Island;
 	import objects.Plane;
 	import objects.Coin;
@@ -43,7 +48,7 @@
 			// on update check if either collision occurs
 			if (play.plane.onStage == true)
 			{
-				planeAndCloud();
+				planeAndMeteor();
 				planeAndCoin();
 				planeAndEnemy();
 				// if a bullet has fired check if an enemy is hit
@@ -54,26 +59,26 @@
 			}
 		}
 
-		private function planeAndCloud():void
+		private function planeAndMeteor():void
 		{
-			var cloud:Cloud;
-			var clouds:Array = play.cloudManager.clouds;
+			var meteor:Meteor;
+			var meteors:Array = play.meteorManager.meteors;
 			var plane:Plane = play.plane;
-			var len:int = clouds.length;
+			var len:int = meteors.length;
 			
-			// check collisions with the plane and each cloud
+			// check collisions with the plane and each meteor
 			for (var count:int = len-1; count>=0; count--)
 			{
-				// set our local cloud object to each cloud from the cloud array
-				cloud = clouds[count];
+				// set our local meteor object to each meteor from the meteor array
+				meteor = meteors[count];
 
 				p1.x = plane.x;
 				p1.y = plane.y;
-				p2.x = cloud.x;
-				p2.y = cloud.y;
+				p2.x = meteor.x;
+				p2.y = meteor.y;
 
-				// Check the distance between the cloud and the plane
-				if (Point.distance(p1,p2) < (cloud.height*0.5) + (plane.height*0.5) )
+				// Check the distance between the meteor and the plane
+				if (Point.distance(p1,p2) < (meteor.height*0.5) + (plane.height*0.5) )
 				{
 					// Show Plane Explosion
 					planeExplode(plane);

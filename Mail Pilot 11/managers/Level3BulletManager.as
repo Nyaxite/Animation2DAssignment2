@@ -1,14 +1,19 @@
-﻿package managers
+﻿/*
+	Original code by: Tom Tsiliopoulos
+	Edited by: Michael Burnie
+	Description: Took the BulletManager and modified it for the third level.
+*/
+package managers
 {
 	import states.Level3;
-
 	import objects.Bullet;
-
 
 	public class Level3BulletManager
 	{
-
+		//set the current game state to level 3
 		private var play:Level3;
+		
+		//createa  bullet array
 		public var bullets:Array;
 		public var count:int = 0;
 
@@ -22,7 +27,6 @@
 		{
 			var bullet:Bullet;
 			var len:int = bullets.length;
-
 			
 			for (var count:int=len-1; count >=0; count--)
 			{
@@ -41,7 +45,7 @@
 			{
 				if (play.plane.onStage == true)
 				{
-					fire();
+					fire();//call the fire method
 				}
 			}
 
@@ -59,7 +63,7 @@
 
 			bullet = new Bullet();
 			play.addChild(bullet);
-			bullet.x = play.plane.x + 5;
+			bullet.x = play.plane.x + 40;
 			bullet.y = 400;
 			bullets.push(bullet);
 

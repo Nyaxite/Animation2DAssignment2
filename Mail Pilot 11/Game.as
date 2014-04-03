@@ -1,5 +1,6 @@
-﻿/* Author: Michael Burnie / Tom Tsiliopoulos
-Mail Pilot version 11
+﻿/* 	Author: Michael Burnie / Tom Tsiliopoulos
+	Mail Pilot version 11
+	Description: This is the main game class for MailPilot version 11.
 */
 package 
 {

@@ -7,13 +7,13 @@
 	import objects.Plane;
 	import objects.Island;
 	import objects.Coin;
-	import objects.Cloud;
+	import objects.Meteor;
 	import objects.Ocean;
 	import objects.Score;
 	import objects.Lives;
 	import objects.Level;
 
-	import managers.CloudManager;
+	import managers.MeteorManager;
 	import managers.CollisionManager;
 	import managers.ExplosionManager;
 
@@ -31,8 +31,8 @@
 		public var plane:Plane;
 		public var island:Island;
 		public var coin:Coin;
-		public var cloud:Cloud;
-		public var cloudManager:CloudManager;
+		public var meteor:Meteor;
+		public var meteorManager:MeteorManager;
 		public var collisionManager:CollisionManager;
 		public var explosionManager:ExplosionManager;
 		public var score:Score;
@@ -81,8 +81,8 @@
 			// play engine sound with 80 ms delay
 			channel = Assets.engine.play(80,2000);
 
-			// add the Clouds;
-			cloudManager = new CloudManager(this);
+			// add the Meteors;
+			meteorManager = new MeteorManager(this);
 
 			// Display the Score
 			score = new Score();
@@ -113,7 +113,7 @@
 			coin.update();
 			plane.update();
 
-			cloudManager.update();
+			meteorManager.update();
 			collisionManager.update();
 			checkScore();
 
@@ -137,7 +137,7 @@
 			removeChild(plane);
 			removeChild(score);
 			removeChild(lives);
-			cloudManager.destroy();
+			meteorManager.destroy();
 			channel.stop();
 			removeFromParent(true);
 		}

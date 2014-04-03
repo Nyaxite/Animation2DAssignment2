@@ -1,4 +1,9 @@
-﻿package managers
+﻿/*
+	Original code by: Tom Tsiliopoulos
+	Edited by: Michael Burnie
+	Description: Took the EnemyManager and modified it for the third level.
+*/
+package managers
 {
 	import starling.core.Starling;
 
